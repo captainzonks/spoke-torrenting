@@ -1,0 +1,20 @@
+http:
+  routers:
+    qbittorrent-static-assets:
+      rule: Host(`q.{{ env "DOMAIN" }}`) && (PathPrefix(`/images/`) || PathPrefix(`/fonts/`) || PathPrefix(`/views/`) || PathPrefix(`/css/`) || PathPrefix(`/scripts/`))
+      entryPoints: "websecure"
+      priority: 200
+      middlewares: chain-static-assets@file
+      service: qbittorrent-svc@file
+
+    qbittorrent:
+      rule: Host(`q.{{ env "DOMAIN" }}`)
+      entryPoints: "websecure"
+      middlewares: chain-authentik-no-crowdsec@file
+      service: qbittorrent-svc@file
+
+    slskd:
+      rule: Host(`soul.{{ env "DOMAIN" }}`)
+      entryPoints: "websecure"
+      middlewares: chain-slskd@file
+      service: slskd-svc@file

@@ -1,0 +1,30 @@
+http:
+  middlewares:
+    #======================================================
+    # SLSKD RATE LIMITING
+    #
+    # No period = 1s window (Traefik default).
+    # Bulk operations (e.g. "clear all complete downloads")
+    # fire one request per item concurrently. With dozens or
+    # hundreds of completed downloads this blows past the
+    # default burst of 50 on rate-limit.
+    #======================================================
+
+    rate-limit-slskd:
+      rateLimit:
+        average: 200
+        burst: 300
+
+    #======================================================
+    # SLSKD CHAIN
+    # Retains CrowdSec — slskd is public-facing with its
+    # own built-in authentication (no Authentik needed).
+    #======================================================
+
+    chain-slskd:
+      chain:
+        middlewares:
+          - rate-limit-slskd
+          - secure-headers@file
+          - real-ip@file
+          - crowdsec@file

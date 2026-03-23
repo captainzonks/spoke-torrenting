@@ -1,0 +1,55 @@
+module:
+  name: torrenting
+  version: 1.0.0
+  description: "VPN-protected torrenting and direct download stack"
+  author: "Matt Barham"
+  license: MIT
+
+requires:
+  networks:
+    - name: troxy
+      required: true
+  hub_services:
+    - traefik
+
+env:
+  hub:
+    - TZ
+    - DOMAIN
+    - SPOKE_DIR
+    - SECRETS_DIR
+    - APPDATA_DIR
+    - PUID
+    - DGID
+    - SSL_CERT_FILE
+    - REQUESTS_CA_BUNDLE
+    - CURL_CA_BUNDLE
+    - CA_CERT
+    - LOCALTIME
+  module:
+    - GLUETUN_IMAGE
+    - QBITTORRENT_IMAGE
+    - QSTICKY_IMAGE
+    - SLSKD_IMAGE
+    - GLUETUN_IP
+    - QBITTORRENT_IP
+    - QSTICKY_IP
+    - QBITTORRENT_WEB_UI_PORT
+    - GLUETUN_CONTROL_SERVER_PORT
+    - SLSKD_HTTP_PORT
+    - SLSKD_HTTPS_PORT
+    - SLSKD_LISTEN_PORT
+    - DL_DIR
+    - MUSIC_DIR
+
+secrets:
+  - name: proton_vpn_wireguard_private_key
+    required: true
+
+health:
+  - service: gluetun
+    path: /v1/openvpn/status
+    port: 8000
+  - service: qbittorrent
+    path: /api/v2/app/version
+    port: 8080
