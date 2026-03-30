@@ -1,5 +1,7 @@
 # spoke-torrenting
 
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/E1E21U3S1R)
+
 Spoke module for VPN-protected torrenting and direct download.
 
 ## Services
