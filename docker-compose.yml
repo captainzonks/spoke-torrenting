@@ -103,8 +103,6 @@ services:
       - HTTP_CONTROL_SERVER_AUTH_CONFIG_FILEPATH=/gluetun/auth/config.toml
       - WIREGUARD_PRIVATE_KEY_SECRETFILE=/run/secrets/proton_vpn_wireguard_private_key
       - WIREGUARD_ADDRESSES=10.2.0.2/32
-      - DOT=off
-      - DNS_ADDRESS=10.2.0.1
       - SERVER_COUNTRIES=United States
 
     volumes:
