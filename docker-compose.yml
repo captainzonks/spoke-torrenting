@@ -255,6 +255,7 @@ services:
       - SLSKD_SHARED_DIR=/music
       - SLSKD_DOWNLOADS_DIR=/complete
       - SLSKD_INCOMPLETE_DIR=/incomplete
+      - TINI_SUBREAPER=1
 
     volumes:
       - ${APPDATA_DIR}/slskd/:/app/:rw
