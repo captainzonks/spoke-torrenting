@@ -2,9 +2,9 @@
 # SPOKE-TORRENTING - DOCKER COMPOSE
 # ==============================================================================
 # Description: VPN-protected torrenting and direct download stack
-# Version: 1.0.2
+# Version: 1.0.3
 # Created: 2026-02-13
-# Modified: 2026-03-17
+# Modified: 2026-04-20
 # ==============================================================================
 # Module: torrenting
 # Config Sources: .env (hub vars injected by Spoke + module defaults)
@@ -14,7 +14,7 @@
 #   GLUETUN_IMAGE (qmcgaw/gluetun:latest)
 #   QBITTORRENT_IMAGE (ghcr.io/hotio/qbittorrent:release-5.1.4)
 #   QSTICKY_IMAGE (ghcr.io/monstermuffin/qsticky:latest)
-#   SLSKD_IMAGE (slskd/slskd:0.24.5)
+#   SLSKD_IMAGE (slskd/slskd:0.25.1)
 # Networks:
 #   - troxy (192.168.35.0/24) - main application network
 # ==============================================================================
