@@ -235,7 +235,7 @@ services:
     <<: [*ssl, *log_small]
     image: ${SLSKD_IMAGE}
     container_name: slskd
-    restart: on-failure
+    restart: unless-stopped
     init: true
 
     security_opt:
