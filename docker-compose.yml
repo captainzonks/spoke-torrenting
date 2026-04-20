@@ -2,7 +2,7 @@
 # SPOKE-TORRENTING - DOCKER COMPOSE
 # ==============================================================================
 # Description: VPN-protected torrenting and direct download stack
-# Version: 1.0.3
+# Version: 1.0.4
 # Created: 2026-02-13
 # Modified: 2026-04-20
 # ==============================================================================
@@ -255,6 +255,7 @@ services:
       - SLSKD_SHARED_DIR=/music
       - SLSKD_DOWNLOADS_DIR=/complete
       - SLSKD_INCOMPLETE_DIR=/incomplete
+      - TINI_SUBREAPER=
 
     volumes:
       - ${APPDATA_DIR}/slskd/:/app/:rw
