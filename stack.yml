@@ -1,3 +1,17 @@
+# ==============================================================================
+# TORRENTING MODULE - STACK MANIFEST
+# ==============================================================================
+# Description: Spoke module manifest for VPN-protected torrenting stack
+# Author: Matt Barham
+# Created: 2026-02-13
+# Modified: 2026-04-21
+# Version: 1.0.1
+# Host: Your Server
+# ==============================================================================
+# Type: Module Manifest
+# Component: module: torrenting
+# ==============================================================================
+
 module:
   name: torrenting
   version: 1.0.0

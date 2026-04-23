@@ -1,22 +1,32 @@
 # ==============================================================================
-# SPOKE-TORRENTING - DOCKER COMPOSE
+# TORRENTING MODULE - DOCKER COMPOSE
 # ==============================================================================
 # Description: VPN-protected torrenting and direct download stack
-# Version: 1.0.4
+# Author: Matt Barham
 # Created: 2026-02-13
-# Modified: 2026-04-20
+# Modified: 2026-04-21
+# Version: 1.0.5
+# Host: Your Server
 # ==============================================================================
-# Module: torrenting
-# Config Sources: .env (hub vars injected by Spoke + module defaults)
+# Component: module: torrenting
+# Config Sources: base.env + .env.example + modules.yml overrides → .env (generated)
 # Security: VPN killswitch via gluetun, non-root where possible
 # ==============================================================================
 # Container Images:
-#   GLUETUN_IMAGE (qmcgaw/gluetun:latest)
-#   QBITTORRENT_IMAGE (ghcr.io/hotio/qbittorrent:release-5.1.4)
-#   QSTICKY_IMAGE (ghcr.io/monstermuffin/qsticky:latest)
-#   SLSKD_IMAGE (slskd/slskd:0.25.1)
+#   See modules/torrenting/.env.example for complete image paths and versions
+#   (GLUETUN_IMAGE, QBITTORRENT_IMAGE, QSTICKY_IMAGE, SLSKD_IMAGE)
+# Documentation:
+#   - Gluetun: https://github.com/qdm12/gluetun
+#   - qBittorrent (hotio): https://hotio.dev/containers/qbittorrent/
+#   - qSticky: https://github.com/MonsterMuffin/qsticky
+#   - Slskd: https://github.com/slskd/slskd
 # Networks:
 #   - troxy (192.168.35.0/24) - main application network
+# Dependencies:
+#   - Hub: traefik
+# External Integrations:
+#   - [x] Traefik routing
+#   - [x] Authentik forward auth
 # ==============================================================================
 
 name: spoke-torrenting
