@@ -7,8 +7,8 @@ README.md - spoke-torrenting module documentation
 Description: VPN-protected torrenting and direct download Spoke module
 Author: Matt Barham
 Created: 2026-02-13
-Modified: 2026-04-21
-Version: 1.0.1
+Modified: 2026-07-29
+Version: 1.0.2
 ==============================================================================
 Document Type: Reference
 Audience: Developer
@@ -48,10 +48,10 @@ docker compose up -d
 
 | Variable                      | Default                                       | Description               |
 |-------------------------------|-----------------------------------------------|---------------------------|
-| `GLUETUN_IMAGE`               | `qmcgaw/gluetun:v3.41.1`                     | Gluetun VPN image         |
-| `QBITTORRENT_IMAGE`           | `ghcr.io/hotio/qbittorrent:release-5.2.1`    | qBittorrent image         |
-| `QSTICKY_IMAGE`               | `ghcr.io/monstermuffin/qsticky:sha-98c834e`   | qSticky image             |
-| `SLSKD_IMAGE`                 | `slskd/slskd:0.25.1`                         | Soulseek image            |
+| `GLUETUN_IMAGE`               | `qmcgaw/gluetun:v3.41.2`                     | Gluetun VPN image         |
+| `QBITTORRENT_IMAGE`           | `ghcr.io/hotio/qbittorrent:release-5.2.3`    | qBittorrent image         |
+| `QSTICKY_IMAGE`               | `ghcr.io/monstermuffin/qsticky:sha-5ca1746`   | qSticky image             |
+| `SLSKD_IMAGE`                 | `slskd/slskd:0.26.0`                         | Soulseek image            |
 | `GLUETUN_IP`                  | `192.168.35.80`                               | Gluetun static IP         |
 | `QSTICKY_IP`                  | `192.168.35.81`                               | qSticky static IP         |
 | `QBITTORRENT_WEB_UI_PORT`     | `6611`                                        | qBittorrent web UI port   |
