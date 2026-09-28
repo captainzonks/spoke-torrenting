@@ -14,7 +14,7 @@
 
 module:
   name: torrenting
-  version: 1.0.0
+  version: "1.0.0"
   description: "VPN-protected torrenting and direct download stack"
   author: "Matt Barham"
   license: MIT
