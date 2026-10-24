@@ -59,6 +59,10 @@ env:
 secrets:
   - name: proton_vpn_wireguard_private_key
     required: true
+  - name: qbittorrent_pass
+    required: true
+  - name: gluetun_api_key
+    required: true
 
 health:
   - service: gluetun

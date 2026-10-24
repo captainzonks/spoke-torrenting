@@ -60,6 +60,10 @@ networks:
 secrets:
   proton_vpn_wireguard_private_key:
     file: ${SECRETS_DIR}/torrenting/proton_vpn_wireguard_private_key
+  qbittorrent_pass:
+    file: ${SECRETS_DIR}/torrenting/qbittorrent_pass
+  gluetun_api_key:
+    file: ${SECRETS_DIR}/torrenting/gluetun_api_key
 
 ############################# SERVICES
 
@@ -219,17 +223,32 @@ services:
       timeout: 10s
       retries: 5
 
+    # qsticky has no *_FILE support: credentials are read from the mounted secrets
+    # at start-up and exported only for the qsticky process. Setting the command
+    # is required because overriding the entrypoint clears the image CMD.
+    entrypoint:
+      - /bin/sh
+      - -c
+      - >-
+        export QBITTORRENT_PASS="$$(cat /run/secrets/qbittorrent_pass)"
+        GLUETUN_APIKEY="$$(cat /run/secrets/gluetun_api_key)";
+        exec "$$@"
+      - qsticky
+    command: ["python", "-m", "qsticky"]
+
+    secrets:
+      - qbittorrent_pass
+      - gluetun_api_key
+
     environment:
       - TZ=${TZ}
       - QBITTORRENT_HOST=gluetun
       - QBITTORRENT_PORT=8080
       - QBITTORRENT_USER=admin
-      - QBITTORRENT_PASS=${QBITTORRENT_PASS}
       - QBITTORRENT_HTTPS=false
       - GLUETUN_HOST=gluetun
       - GLUETUN_PORT=8000
       - GLUETUN_AUTH_TYPE=apikey
-      - GLUETUN_APIKEY=${GLUETUN_API_KEY}
       - CHECK_INTERVAL=30
       - LOG_LEVEL=INFO
       - PAUSE_ON_VPN_DISCONNECT=true
