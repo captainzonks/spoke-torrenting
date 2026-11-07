@@ -48,9 +48,9 @@ docker compose up -d
 
 | Variable                      | Default                                       | Description               |
 |-------------------------------|-----------------------------------------------|---------------------------|
-| `GLUETUN_IMAGE`               | `qmcgaw/gluetun:v3.41.2`                     | Gluetun VPN image         |
-| `QBITTORRENT_IMAGE`           | `ghcr.io/hotio/qbittorrent:release-5.2.3`    | qBittorrent image         |
-| `QSTICKY_IMAGE`               | `ghcr.io/monstermuffin/qsticky:sha-5ca1746`   | qSticky image             |
+| `GLUETUN_IMAGE`               | `qmcgaw/gluetun:v3.41.3`                     | Gluetun VPN image         |
+| `QBITTORRENT_IMAGE`           | `ghcr.io/hotio/qbittorrent:release-5.3.0`    | qBittorrent image         |
+| `QSTICKY_IMAGE`               | `ghcr.io/monstermuffin/qsticky:2.4.3`         | qSticky image             |
 | `SLSKD_IMAGE`                 | `slskd/slskd:0.26.2`                         | Soulseek image            |
 | `GLUETUN_IP`                  | `192.168.35.80`                               | Gluetun static IP         |
 | `QSTICKY_IP`                  | `192.168.35.81`                               | qSticky static IP         |
