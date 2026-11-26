@@ -7,8 +7,8 @@ README.md - spoke-torrenting module documentation
 Description: VPN-protected torrenting and direct download Spoke module
 Author: Matt Barham
 Created: 2026-02-13
-Modified: 2026-07-29
-Version: 1.0.2
+Modified: 2026-11-25
+Version: 1.0.3
 ==============================================================================
 Document Type: Reference
 Audience: Developer
@@ -49,7 +49,7 @@ docker compose up -d
 | Variable                      | Default                                       | Description               |
 |-------------------------------|-----------------------------------------------|---------------------------|
 | `GLUETUN_IMAGE`               | `qmcgaw/gluetun:v3.41.3`                     | Gluetun VPN image         |
-| `QBITTORRENT_IMAGE`           | `ghcr.io/hotio/qbittorrent:release-5.3.0`    | qBittorrent image         |
+| `QBITTORRENT_IMAGE`           | `ghcr.io/hotio/qbittorrent:release-5.3.1`    | qBittorrent image         |
 | `QSTICKY_IMAGE`               | `ghcr.io/monstermuffin/qsticky:2.4.3`         | qSticky image             |
 | `SLSKD_IMAGE`                 | `slskd/slskd:0.26.2`                         | Soulseek image            |
 | `GLUETUN_IP`                  | `192.168.35.80`                               | Gluetun static IP         |
